@@ -5,6 +5,8 @@ const search = document.getElementById("search-button");
 search.addEventListener("click", getMeteo);
 const searchText = document.getElementById("search-text");
 
+let marker = undefined;
+let macarte = undefined;
 
 
 function initMap() {
@@ -18,6 +20,11 @@ function initMap() {
         subdomains: 'abcd',
         accessToken: '6r4lsKtVRbmZG0AyMTSNfLaAKTBaqcWGl4nJLRDO5djPSTuDIUnbyBPdvMZ7pAtq'
     }).addTo(macarte);
+    marker = L.marker([44.8430557, -0.5750000]).addTo(macarte)
+    macarte.on('click', e => {
+        moveMapPointer(e.latlng)
+        getMeteoLat(e.latlng);
+    });
 }
 
 window.onload = function(){
@@ -25,8 +32,20 @@ window.onload = function(){
 };
 
 
+function getMeteoLat(e) {
+    console.log(e);
+    const urle = "https://www.prevision-meteo.ch/services/json/lat="+e.lat+"lng="+e.lng
+    console.log(urle);
+    
+    const promise = fetch(urle);
+    promise.then(response => {return response.json()})    
+        .then( data => {console.log(data); jsonData = data; jsonToHTML()})
+        .catch(err => {console.error(err)})
+}
+
 function getMeteo() {
     const name = searchText.value.toLowerCase();
+    console.log(name);
     const promise = fetch(url+name);
     promise.then(response => {return response.json()})    
         .then( data => {console.log(data); jsonData = data; jsonToHTML()})
@@ -42,8 +61,15 @@ function jsonToHTML(){
     }
 }
 
-function moveMapPointer(){
-    L.latLng(jsonData.city_info.latitude, jsonData.city_info.longitude);
+function moveMapPointer(e){
+    // let e = [jsonData.city_info.latitude, jsonData.city_info.longitude]
+    if (marker != undefined )
+        macarte.removeLayer(marker);
+    let new_marker = L.marker(e);
+    marker  = new_marker;
+    macarte.addLayer(new_marker);
+    macarte.setView(e);
+    // L.latLng(jsonData.city_info.latitude, jsonData.city_info.longitude);
 }
 
 function showCurrent() {
