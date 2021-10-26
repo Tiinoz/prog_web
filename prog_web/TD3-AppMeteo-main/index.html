@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Application météo</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+   
+   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="services/highlight.js" defer></script>
+    <script src="services/completion.js" defer></script>
+    <script src="domain/hour.js" defer></script>
+    <script src="domain/weather.js" defer></script>
+    <script src="domain/postal.js" defer></script>
+    <script src="domain/map.js" defer></script>
+    <script src="application/script.js" defer></script>
+</head>
+
+<body>
+    <div id="intro" class = container>
+        <div class="row justify-content-center">
+            <p>Please Enter your City, or your postcode or simply click on the map to get the weather</p>
+        </div>
+    </div>
+    <div id="menu">
+        <div class="row justify-content-center">
+            <input type="text" id="city" list= "cityList" autocomplete="off">
+            <datalist id = "cityList"></datalist>
+            <button type="button " onclick="city()">afficher</button>
+        </div>
+    </div>
+
+    <div class = container>
+        <div id="mapid"></div>
+    </div>
+    <div id="weather">
+        <div class="row justify-content-center">
+            <div id="today" class="col sm-2">
+                <h1 id= tdh0 ></h1>
+                <div id="condition" input="text"></div>
+                <div id="humidity" input="text"></div>
+                <div id="tmp" input="text"></div>
+                <div id="img" input="text"></div>
+            </div>
+                <div id="d+0" class="col sm-2">
+                    <h1 id ="hd0"></h1>
+                    <div id="condition0" input="text"></div>
+                    <div id="tmin0" input="text"></div>
+                    <div id="tmax0" input="text"></div>
+                    <div id="img0" input="text"></div>
+                    <div id="hourly0" >
+                    </div>
+                    </div>
+                <div id="d+1" class="col sm-2">
+                    <h1 id ="hd1"></h1>
+                    <div id="condition1" input="text"></div>
+                    <div id="tmin1" input="text"></div>
+                    <div id="tmax1" input="text"></div>
+                    <div id="img1" input="text"></div>
+                    <div id="hourly1" >
+                    </div>
+                </div>
+                <div id="d+2" class="col sm-2">
+                    <h1 id ="hd2"></h1>
+                    <div id="condition2" input="text"></div>
+                    <div id="tmin2" input="text"></div>
+                    <div id="tmax2" input="text"></div>
+                    <div id="img2" input="text"></div>
+                    <div id="hourly2" >
+                    </div>
+                </div>
+                <div id="d+3" class="col sm-2">
+                    <h1 id ="hd3"></h1>
+                    <div id="condition3" input="text"></div>
+                    <div id="tmin3" input="text"></div>
+                    <div id="tmax3" input="text"></div>
+                    <div id="img3" input="text"></div>
+                    <div id="hourly3" >
+                    </div>
+                </div>
+                <div id="d+4" class="col sm-2">
+                    <h1 id ="hd4"></h1>
+                    <div id="condition4" input="text"></div>
+                    <div id="tmin4" input="text"></div>
+                    <div id="tmax4" input="text"></div>
+                    <div id="img4" input="text"></div>
+                    <div id="hourly4" >
+                    </div>
+                </div>
+          </div>
+    </div>
+    <div id ="history" class = "container">
+        <div class="card">
+            <div class="card-header">
+              <a class="card-link" data-toggle="collapse" href="#collapseHistoryOne">
+                Multiples City's Weather Recap
+              </a>
+            </div>
+            <div id="collapseHistoryOne" class="collapse show" data-parent="#history">
+              <div class="card-body" id="collapseHistoryData"></div>
+            </div>
+          </div>
+    </div>
+    </div>
+    <div id="data" class= "container">
+        <div class="card">
+            <div class="card-header">
+              <a class="card-link" data-toggle="collapse" href="#collapseOne">
+                Show me the weather data from the api 
+              </a>
+            </div>
+            <div id="collapseOne" class="collapse show" data-parent="#data">
+              <div class="card-body" id="collapseData"></div>
+            </div>
+          </div>
+    </div>
+    <div id="graph" class= "container">
+        <div class="card">
+            <div class="card-header">
+              <a class="card-link" data-toggle="collapse" href="#collapseGraphOne">
+                Graphical View 
+              </a>
+            </div>
+            <div id="collapseGraphOne" class="collapse show" data-parent="#graph">
+              <div class="card-body" id="collapseGraphData">
+                <canvas id="myChart" width="10" height="10"></canvas>
+              </div>
+            </div>
+          </div>
+    </div>
+    
+    
+</body>
+
+</html>

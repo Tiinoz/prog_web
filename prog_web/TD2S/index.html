@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Black Jack</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <!-- <link rel="stylesheet" href="script.js" defer/> -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="centered"><h1>Black Jack</h1></div>
+
+      <div class="infoParty centered">
+        <p class="">Mise: <span class="money" id="blind"></span></p>
+        <p class="">Votre argent: <span class="money" id="myMoney"></span> €</p>
+        <p class="">
+          Celui de la banque: <span class="money" id="bankMoney"></span> €
+        </p>
+      </div>
+
+      <div class="container-fluid">
+        <div class="centered cardSection">
+          <p>Carte du Croupier</p>
+          <p>Score : <span id="scoreBank"></span></p>
+          <div class="bankCard"></div>
+        </div>
+        <div class="centered cardSection">
+          <p>Vos Cartes</p>
+          <p>Score : <span id="scorePlayer"></span></p>
+          <div class="cardPlayer"></div>
+        </div>
+        <div class="centered">
+          <input type="number" class="blind" value="10"/>
+          <input type="button" class="btn btn-info" value="Hit" onclick="playerTurn()"/>
+          <input type="button" class="btn btn-success" value="Stand" onclick="bankTurn()"/>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

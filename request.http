@@ -1,0 +1,8 @@
+GET https://www.prevision-meteo.ch/services/json/Bordeaux HTTP/1.1
+
+###
+
+GET https://www.prevision-meteo.ch/services/json/Bordeaux
+
+
+###

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Application météo</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+    <link rel="stylesheet" href="style.css">
+    <!-- JS -->
+    <script src="weather.js" defer></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+</head>
+<body>
+    <div id="menu">
+        <div class="row justify-content-center">
+
+            <input id="search-text" type="text">
+            <button id="search-button" class="btn btn-large btn-dark" type="button">afficher</button>
+	    </div>
+	</div>
+    <div class = container>
+        <div id="mapid"></div>
+    </div>
+</div>
+    <div id="weather">
+        <div class="row justify-content-center">
+            <div id="today" class="text-center col-sm-2">
+                <h1 id="day"></h1>
+                <h3 id="date"></h3>
+                <div id="condition" input="text"></div>
+                <div id="humidity" input="text"></div>
+                <div id="tmp" input="text"></div>
+                <div id="img" input="text"></div>
+            </div>
+
+            <div id="day+1" class="text-center col-sm-2">
+                <h1 id="day1"></h1>
+                <h3 id="date1"></h3>
+                <div id="condition1" input="text"></div>
+                <div id="tmin1" input="text"></div>
+                <div id="tmax1" input="text"></div>
+                <div id="img1" input="text"></div>
+            </div>
+
+            <div id="day+2" class="text-center col-sm-2">
+                <h1 id="day2"></h1>
+                <h3 id="date2"></h3>
+                <div id="condition2" input="text"></div>
+                <div id="tmin2" input="text"></div>
+                <div id="tmax2" input="text"></div>
+                <div id="img2" input="text"></div>
+            </div>
+
+            <div id="day+3" class="text-center col-sm-2">
+                <h1 id="day3"></h1>
+                <h3 id="date3"></h3>
+                <div id="condition3" input="text"></div>
+                <div id="tmin3" input="text"></div>
+                <div id="tmax3" input="text"></div>
+                <div id="img3" input="text"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

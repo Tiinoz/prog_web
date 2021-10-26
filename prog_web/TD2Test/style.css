@@ -1,0 +1,36 @@
+
+
+
+button{
+    margin: 10px 10px !important;
+}
+
+.game-status{
+    margin: 30px;
+
+}
+
+h1, h3{
+    color: #c29501;
+}
+
+.player-hand{
+    /* margin-left: 100px; */
+}
+
+.hidden{
+    display: none !important;
+}
+
+.money {
+    margin: 0;
+}
+
+.blind-value:hover{
+    background-color: #fff !important;
+    color : #000 !important;
+}
+
+.player-cards img, .dealer-cards img{
+    margin: 0px 10px;
+}

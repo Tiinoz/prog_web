@@ -1,0 +1,270 @@
+
+    body,html{
+      background: whitesmoke !important;
+      }
+  
+      .searchbar{
+        margin-bottom: auto;
+        margin-top: 50px;
+        height: 60px;
+        background-color: #353b48;
+        border-radius: 30px;
+        padding: 10px;
+      }
+  
+      .search_input{
+        color: white;
+        border: 0;
+        outline: 0;
+        background: none;
+        width: 0;
+        caret-color:transparent;
+        line-height: 40px;
+        transition: width 0.4s linear;
+      }
+  
+      .searchbar:hover > .search_input{
+        padding: 0 10px;
+        width: 450px;
+        caret-color:red;
+        transition: width 0.4s linear;
+      }
+  
+      .searchbar:hover > .search_icon{
+        background: white;
+        color: #e74c3c;
+      }
+  
+      .search_icon{
+        height: 40px;
+        width: 40px;
+        float: right;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        color:white;
+        text-decoration:none;
+      }
+
+      .text {
+        margin-top: 50px;
+        font-style: bold;
+        font-size: 46px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: black;
+      }
+
+      .text2 {
+        margin-top: 50px;
+        font-style: bold;
+        font-size: 32px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: black;
+      }
+
+      .text3 {
+        font-style: bold;
+        font-size: 32px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: black;
+      }
+
+      .center{
+        text-align: center;
+      }
+
+      .current-weather{
+        overflow:hidden;
+        display: block;
+        white-space:nowrap;
+        text-align:center;
+      }
+      
+        .current-temp{
+          display:inline-block;
+          direction:ltr;
+        }
+  
+        .temp-value
+        {
+          font-size:7em;
+        }
+
+        .temp-unit{font-size:2em;line-height:1.8em;vertical-align:top;}
+
+        .current-misc{
+          display:inline-block;
+          margin-left:2em;
+        }
+
+        .current-description{
+          font-size:1.6em;
+          line-height:1.4;
+        }
+
+        .current-wind{
+          font-size:1.4em;
+          line-height:1.4;
+          font-style: italic;
+        }
+        
+      
+        .future
+        {
+            display: flex;
+            flex-flow: row nowrap;
+        }
+
+            .future .day
+            {
+                flex-grow: 1;
+                text-align: center;
+                cursor: pointer;
+                border-radius: 1px;
+                border-style: double;
+            }
+
+                .future .day:hover
+                {
+                    color: #fff;
+                    background-color: #e74c3c;
+                    border-style: solid;
+                    border-radius: 1px;
+                    border-color: black;
+                }
+
+                .future .day h3
+                {
+                    text-transform: uppercase;
+                }
+
+                .future .day p
+                {
+                    font-size: 28px;
+                }
+
+        .map {
+          text-align: center;
+          display: block;
+          margin: 0 auto;
+        }
+
+        .select-list {
+          margin-top: 50px;
+          text-align: center;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .button-self-made {
+          text-align: center;
+          align-items: center;
+          margin: 0 auto;
+          display: flex;
+          justify-content: center;
+
+          width: 200px;
+          height: 50px;
+          border: none;
+          color: whitesmoke;
+          background-color: black;
+          border-radius: 3px;
+          box-shadow: inset 0 0 0 0 #e74c3c;
+          transition: ease-out 0.2s;
+          font-size: 2rem;
+          outline: none;
+
+        }
+
+        .button-self-made:hover {
+          box-shadow: inset 200px 0 0 0 #e74c3c;
+          cursor: pointer;
+          color: #ffffff
+        }
+
+      .td-styled:hover {
+        background: #e74c3c;
+        color: black;
+      }
+
+      ::-webkit-scrollbar{
+        width: 20px;
+      }
+
+      ::-webkit-scrollbar-thumb{
+        border-radius:30px;
+        background: -webkit-gradient(linear, left top, left bottom, from(white), to(red));
+        box-shadow: inset 2px 2px 2px rgba(255,255,255,0.25), inset -2px -2px -2px rgba(0,0,0,0.25);
+      }
+
+      ::-webkit-scrollbar-track{
+        background: linear-gradient(to right, #201c29, #201c29 1px, #100e17 1px, #100e17);
+      }
+
+
+      .weather-card {
+        width:350px;
+         display:inline-block;
+          margin-top:50px
+          
+        }
+        
+        .weather-card .card {
+          position:relative;
+          overflow:hidden;
+          width:100%;
+          margin:0 auto;
+          background:#333;
+          padding:20px;
+          box-sizing:border-box;
+          text-align:center;
+          box-shadow:0 10px 40px rgba(0,0,0,.5)
+        }
+
+        .weather-card .card .layer {
+          z-index:1;
+          position:absolute;
+          top:calc(100% - 2px);
+          height:100%;
+          width:100%;
+          left:0;
+          background:linear-gradient(to left , red, white);
+          transition:0.5s;
+          
+        }
+        
+        .weather-card .card .content {
+          z-index:2; 
+          position:relative;
+        }
+        
+        .weather-card .card:hover  .layer{
+          top:0;
+        }
+        
+        .weather-card .card .content p {
+          font-size:14px;
+          line-height:24px;
+          color:#fff;
+        }
+        
+        .weather-card .card .content .details h2 span {
+        font-size:18px;
+        color:purple;
+          transition:0.5s;
+        }
+        .weather-card .card:hover .content .details h2 span {
+          color:white;
+          position:relative
+        }
+        
+        body{
+          margin-bottom:20px
+        }
+
+        .center-bot-page{
+          text-align: center;
+          display: flex;
+        }

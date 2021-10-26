@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <script src="main.js" defer></script>
+
+    <title>BlackJack</title>
+</head>
+<body>
+    <h1 class="text-center display-3">BlackJack</h1>
+    <p class="text-center stat">W: 0 | D: 0 | L: 0</p>
+
+    <div class="game-status container-fluid ">
+        <!-- <div class="row justify-content-center">
+            <input type="number" class="col-lg-2 btn btn-outline-dark btn-lg hidden blind-value" name="test" min="1" max="100">
+        </div>   -->
+        <div class="row justify-content-center">
+            <button type="button" class="btn btn-dark btn-lg new-game-button">New Game</button>
+            <button type="button" class="btn btn-dark btn-lg hidden hit-button">Hit</button>
+            <button type="button" class="btn btn-dark btn-lg hidden stand-button">Stand</button>
+            <!-- <button type="button" class="btn btn-dark btn-lg hidden double-button">Double</button> -->
+        </div>
+        <div class="row justify-content-center align-items-center">
+            <h4 class="hidden money">Dealer has <span class="dealer-money"></span>€ </h4>
+        </div>
+        <div class="row justify-content-center align-items-center">
+            <h4 class="hidden money">Player has <span class="player-money"></span>€ </h4>
+        </div>
+    </div>
+
+    <div class="container hidden bj-table">
+        <div class="row justify-content-center"> 
+            <div class="col dealer-hand text-center">
+                <h3>Dealer hand</h3>
+                <p class="dealer-cards"></p>
+                <p class="dealer-scores"></p>
+            </div>
+
+            <div class="col player-hand text-center">
+                <h3>Player hand</h3>
+                <p class="player-cards"></p>
+                <p class="player-scores"></p>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
