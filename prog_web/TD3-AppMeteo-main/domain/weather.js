@@ -13,6 +13,7 @@ class Weather {
         if (this.lat != undefined && this.lng != undefined){
             url = this.url + "lat=" + this.lat + "lng=" + this.lng; 
         }
+        console.log(url)
         let meteo = fetch(url).then((resp) => { return resp.json(); })
             .then((json) => {
                 this.json = json;

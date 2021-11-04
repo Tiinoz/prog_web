@@ -11,76 +11,61 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
     integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
     crossorigin=""/>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
     <!-- JS -->
+    <script src="weather.js" defer></script>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
    crossorigin=""></script>
-    <script src="js/weather.js" defer></script>
-    <script src="js/map.js" defer></script>
-    <script src="js/script.js" defer></script>
 </head>
 <body>
-    <h1 class="text-center">App Meteo</h1>
-    <p class="text-center">Declercq Lucas</p>
-    <hr>
-
     <div id="menu">
         <div class="row justify-content-center">
-            <input id="search-text" type="text" class="form-control-lg">
+
+            <input id="search-text" type="text">
             <button id="search-button" class="btn btn-large btn-dark" type="button">afficher</button>
 	    </div>
 	</div>
-    <hr>
     <div class = container>
         <div id="mapid"></div>
     </div>
-    <div id="weather" class="container-fluid">
-        <h1 id="city" class="text-center h1"></h1>
+</div>
+    <div id="weather">
         <div class="row justify-content-center">
             <div id="today" class="text-center col-sm-2">
                 <h1 id="day"></h1>
                 <h3 id="date"></h3>
-                <div id="condition"></div>
-                <div id="humidity"></div>
-                <div id="tmp"></div>
-                <div id="img"></div>
+                <div id="condition" input="text"></div>
+                <div id="humidity" input="text"></div>
+                <div id="tmp" input="text"></div>
+                <div id="img" input="text"></div>
             </div>
 
             <div id="day+1" class="text-center col-sm-2">
                 <h1 id="day1"></h1>
                 <h3 id="date1"></h3>
-                <div id="condition1"></div>
-                <div id="tmin1"></div>
-                <div id="tmax1" ></div>
-                <div id="img1"></div>
+                <div id="condition1" input="text"></div>
+                <div id="tmin1" input="text"></div>
+                <div id="tmax1" input="text"></div>
+                <div id="img1" input="text"></div>
             </div>
 
             <div id="day+2" class="text-center col-sm-2">
                 <h1 id="day2"></h1>
                 <h3 id="date2"></h3>
-                <div id="condition2"></div>
-                <div id="tmin2"></div>
-                <div id="tmax2"></div>
-                <div id="img2"></div>
+                <div id="condition2" input="text"></div>
+                <div id="tmin2" input="text"></div>
+                <div id="tmax2" input="text"></div>
+                <div id="img2" input="text"></div>
             </div>
 
             <div id="day+3" class="text-center col-sm-2">
                 <h1 id="day3"></h1>
                 <h3 id="date3"></h3>
-                <div id="condition3"></div>
-                <div id="tmin3"></div>
-                <div id="tmax3"></div>
-                <div id="img3"></div>
-            </div>
-        </div>
-    </div>
-    <div id ="history" class = "container">
-        <div class="card">
-            <div class="card-header">
-                <div class="show">
-                    <div class="card-body" id="historyData"></div>
-                </div>
+                <div id="condition3" input="text"></div>
+                <div id="tmin3" input="text"></div>
+                <div id="tmax3" input="text"></div>
+                <div id="img3" input="text"></div>
             </div>
         </div>
     </div>
